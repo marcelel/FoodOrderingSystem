@@ -14,7 +14,7 @@ public class CuisineTest {
     private Cuisine cuisine = new Cuisine("Polish");
 
     @Test
-    public void addMainCourse() {
+    public void addMainCourse() throws Exception {
         MainCourse mainCourse = new MainCourse("Pizza", 25);
         cuisine.addMainCourse("Pizza", 25);
         MainCourse mainCourse1InCuisine = cuisine.findMainCourse("Pizza");
@@ -23,7 +23,7 @@ public class CuisineTest {
     }
 
     @Test
-    public void addDesserts() {
+    public void addDesserts() throws Exception {
         Dessert dessert = new Dessert("Ice cream", 10);
         cuisine.addDesserts("Ice cream", 10);
         Dessert dessertInCuisine = cuisine.findDessert("Ice cream");
@@ -32,7 +32,7 @@ public class CuisineTest {
     }
 
     @Test
-    public void getName() {
+    public void getName() throws Exception {
         assertEquals("Polish", cuisine.getName());
     }
 

@@ -3,7 +3,7 @@ package dishes;
 /**
  * Created by marcel on 15.02.17.
  */
-public class Dish {
+public class Dish implements MenuItem {
 
     private String name;
 
@@ -20,5 +20,9 @@ public class Dish {
 
     public double getPrice() {
         return price;
+    }
+
+    public String order() {
+        return  "Your order: " + name + ", price: " + price;
     }
 }

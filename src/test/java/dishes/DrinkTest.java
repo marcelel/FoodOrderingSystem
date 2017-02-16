@@ -12,34 +12,34 @@ public class DrinkTest {
     private Drink drink = new Drink("Cola", 5);
 
     @Test
-    public void isIceCubes() {
+    public void isIceCubes() throws Exception {
         assertEquals(false, drink.isIceCubes());
     }
 
     @Test
-    public void isLemon() {
+    public void isLemon() throws Exception {
         assertEquals(false, drink.isLemon());
     }
 
     @Test
-    public void makeChoice() {
+    public void makeChoice() throws Exception {
         assertEquals(false, drink.makeChoice(0));
     }
 
     @Test
-    public void makeChoiceIceCube() {
+    public void makeChoiceIceCube() throws Exception {
         assertEquals(true, drink.makeChoice(1));
         assertEquals(true, drink.isIceCubes());
     }
 
     @Test
-    public void makeChoiceLemon() {
+    public void makeChoiceLemon() throws Exception {
         assertEquals(true, drink.makeChoice(2));
         assertEquals(true, drink.isLemon());
     }
 
     @Test
-    public void makeChoiceBoth() {
+    public void makeChoiceBoth() throws Exception {
         drink = new Drink("Cola", 5);
         assertEquals(true, drink.makeChoice(3));
         assertEquals(true, drink.isIceCubes());

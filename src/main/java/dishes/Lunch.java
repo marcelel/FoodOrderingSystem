@@ -3,7 +3,7 @@ package dishes;
 /**
  * Created by marcel on 15.02.17.
  */
-public class Lunch {
+public class Lunch implements MenuItem {
 
     private MainCourse mainCourse;
 
@@ -20,5 +20,10 @@ public class Lunch {
 
     public Dessert getDessert() {
         return dessert;
+    }
+
+    public String order() {
+        double sum = dessert.getPrice() + mainCourse.getPrice();
+        return "Main course: " + mainCourse + ", dessert: " + dessert + ", price: " + sum;
     }
 }

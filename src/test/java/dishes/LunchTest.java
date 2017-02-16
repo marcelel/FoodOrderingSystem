@@ -12,14 +12,14 @@ public class LunchTest {
     private Lunch lunch = new Lunch(new MainCourse("Pizza", 25), new Dessert("Ice cream", 10));
 
     @Test
-    public void getMainCourse() {
+    public void getMainCourse() throws Exception {
         MainCourse mainCourse = new MainCourse("Pizza", 25);
         assertEquals(mainCourse.getName(), lunch.getMainCourse().getName());
         assertEquals(mainCourse.getPrice(), lunch.getMainCourse().getPrice(), 0.01);
     }
 
     @Test
-    public void getDessert() {
+    public void getDessert() throws Exception {
         Dessert dessert = new Dessert("Ice cream", 10);
         assertEquals(dessert.getName(), lunch.getDessert().getName());
         assertEquals(dessert.getPrice(), lunch.getDessert().getPrice(), 0.01);

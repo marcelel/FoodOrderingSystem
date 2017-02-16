@@ -1,30 +1,28 @@
+package menu;
+
 import cuisines.Cuisine;
-import menu.Adder;
-import menu.MenuCard;
-import menu.Order;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Created by marcel on 15.02.17.
+ * Created by marcel on 16.02.17.
  */
-public class FoodOrderingSystem {
+public class Adder {
 
-    private static MenuCard menuCard = new MenuCard();
-
-    public static void main(String[] args) {
-        Order order = new Order();
-        order.askForOrder();
-        Adder adder = new Adder();
-        adder.askToAdd();
-    }
+    MenuCard menuCard = new MenuCard();
 
     public void askToAdd() {
         System.out.println("Would you like to add something?\n1 - Cuisine\n2 - Drink\n3 - Course\n4 - Dessert");
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
+        int choice = 0;
+        try {
+            choice = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Wrong value!");
+            return;
+        }
         switch (choice) {
             case 1 : addCuisine();
                 break;
@@ -112,4 +110,5 @@ public class FoodOrderingSystem {
             return;
         }
         menuCard.addMainCourse(cuisine.getName(), dessertName, dessertPrice);
-    }}
+    }
+}

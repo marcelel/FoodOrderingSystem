@@ -12,12 +12,12 @@ public class DishTest {
     private Dish dish = new Dish("Cola", 5);
 
     @Test
-    public void testgetName() {
+    public void testgetName() throws Exception {
         assertEquals("Cola", dish.getName());
     }
 
     @Test
-    public void getPrice() {
+    public void getPrice() throws Exception {
         assertEquals(5, dish.getPrice(), 0.01);
     }
 }

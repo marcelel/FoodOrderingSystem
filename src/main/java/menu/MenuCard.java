@@ -22,8 +22,8 @@ public class MenuCard {
         cuisines.add(new Cuisine("Italian"));
         for (int i = 0; i < cuisines.size(); i++) {
             for (int j = 0; j < 3; j++) {
-                cuisines.get(i).addMainCourse("MainCourse" + j, 20 + 5*j);
-                cuisines.get(i).addDesserts("Dessert" + j, 10 + 5*j);
+                cuisines.get(i).addMainCourse(cuisines.get(i).getName() + "MainCourse" + j, 20 + 5*j);
+                cuisines.get(i).addDesserts(cuisines.get(i).getName() + "Dessert" + j, 10 + 5*j);
             }
         }
     }
@@ -100,10 +100,9 @@ public class MenuCard {
         }
     }
 
-    public void displayMenu() {
+    public void displayLunch() {
         displayCuisines();
         displayDesserts();
-        displayDrinks();
     }
 
     public ArrayList<Cuisine> getCuisines() {
@@ -112,5 +111,38 @@ public class MenuCard {
 
     public ArrayList<Drink> getDrinks() {
         return drinks;
+    }
+
+    public MainCourse findMainCourse(String name) {
+        for (Cuisine c : cuisines) {
+            ArrayList<MainCourse> mainCourses = c.getMainCourses();
+            for (MainCourse m : mainCourses) {
+                if (m.getName().equals(name)) {
+                    return m;
+                }
+            }
+        }
+        return null;
+    }
+
+    public Dessert findDessert(String name) {
+        for (Cuisine c : cuisines) {
+            ArrayList<Dessert> desserts = c.getDesserts();
+            for (Dessert d : desserts) {
+                if (c.getName().equals(name)) {
+                    return d;
+                }
+            }
+        }
+        return null;
+    }
+
+    public Drink findDrink(String name) {
+        for (Drink d : drinks) {
+            if (d.getName().equals(name)){
+                return d;
+            }
+        }
+        return null;
     }
 }

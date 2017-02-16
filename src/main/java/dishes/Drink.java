@@ -34,6 +34,7 @@ public class Drink extends Dish {
         while (attemps <= 3) {
             if (attemps == 3){
                 System.out.println("Too many attemps!");
+                break;
             }
             attemps++;
             scanner = new Scanner(System.in);
@@ -67,5 +68,11 @@ public class Drink extends Dish {
             System.out.println("Try again!");
             return false;
         }
+    }
+
+    @Override
+    public String order(){
+        ask();
+        return super.order();
     }
 }
