@@ -18,16 +18,38 @@ public class MenuCardTest {
     private MenuCard menuCard = new MenuCard();
 
     @Test
+    public void findMainCourse() throws Exception {
+        menuCard.addMainCourse("Polish", "Pizza", 30);
+        assertEquals("Pizza", menuCard.findMainCourse("Pizza").getName());
+        assertEquals(30, menuCard.findMainCourse("Pizza").getPrice(), 0.01);
+    }
+
+    @Test
+    public void findDessert() throws Exception {
+        menuCard.addDessert("Polish", "Ice cream", 10);
+        assertEquals("Ice cream", menuCard.findDessert("Ice cream").getName());
+        assertEquals(10, menuCard.findDessert("Ice cream").getPrice(), 0.01);
+    }
+
+    @Test
+    public void findDrink() throws Exception {
+        menuCard.addDrink("Cola", 6);
+        assertEquals("Cola", menuCard.findDrink("Cola").getName()   );
+        assertEquals(6, menuCard.findDrink("Cola").getPrice(), 0.01);
+
+    }
+
+    @Test
     public void addCuisine() throws Exception {
         menuCard.addCuisine("English");
-        Cuisine foundCousine = null;
+        Cuisine foundCuisine = null;
         ArrayList<Cuisine> cuisines = menuCard.getCuisines();
         for (Cuisine c : cuisines) {
             if (c.getName().equals("English")){
-                foundCousine = c;
+                foundCuisine = c;
             }
         }
-        assertEquals("English", foundCousine.getName());
+        assertEquals("English", foundCuisine.getName());
     }
 
     @Test

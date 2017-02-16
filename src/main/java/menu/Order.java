@@ -51,16 +51,18 @@ public class Order {
         return false;
     }
 
-    private MainCourse orderMainCourse(Scanner scanner) {
+    public MainCourse orderMainCourse() {
         menuCard.displayLunch();
         System.out.println("Which course would you like? (Give name)");
+        Scanner scanner = new Scanner(System.in);
         String mainCourseName = scanner.nextLine();
         return menuCard.findMainCourse(mainCourseName);
     }
 
-    private Dessert orderDessert(Scanner scanner) {
+    public Dessert orderDessert() {
         menuCard.displayDesserts();
         System.out.println("Which dessert would you like? (Give name");
+        Scanner scanner = new Scanner(System.in);
         String dessertName = scanner.nextLine();
         return menuCard.findDessert(dessertName);
     }
@@ -74,12 +76,12 @@ public class Order {
                 break;
             }
             attemps++;
-            MainCourse mainCourse = orderMainCourse(scanner);
+            MainCourse mainCourse = orderMainCourse();
             if (mainCourse == null) {
                 System.out.println("This course does not exist, try again");
                 continue;
             }
-            Dessert dessert = orderDessert(scanner);
+            Dessert dessert = orderDessert();
             if (dessert == null) {
                 System.out.println("This desert does not exist, try again!");
                 continue;

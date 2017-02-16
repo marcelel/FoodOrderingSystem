@@ -24,6 +24,6 @@ public class Lunch implements MenuItem {
 
     public String order() {
         double sum = dessert.getPrice() + mainCourse.getPrice();
-        return "Main course: " + mainCourse + ", dessert: " + dessert + ", price: " + sum;
+        return "Main course: " + mainCourse.getName() + ", dessert: " + dessert.getName() + ", price: " + sum;
     }
 }

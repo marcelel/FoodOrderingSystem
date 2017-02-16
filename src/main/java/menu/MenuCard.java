@@ -69,7 +69,7 @@ public class MenuCard {
         System.out.println("Cuisine not found");
     }
 
-    public void displayCuisines() {
+    public void displayCourse() {
         System.out.println("Main courses");
         for (Cuisine c : cuisines) {
             System.out.println(c.getName());
@@ -101,7 +101,7 @@ public class MenuCard {
     }
 
     public void displayLunch() {
-        displayCuisines();
+        displayCourse();
         displayDesserts();
     }
 
@@ -129,7 +129,7 @@ public class MenuCard {
         for (Cuisine c : cuisines) {
             ArrayList<Dessert> desserts = c.getDesserts();
             for (Dessert d : desserts) {
-                if (c.getName().equals(name)) {
+                if (d.getName().equals(name)) {
                     return d;
                 }
             }

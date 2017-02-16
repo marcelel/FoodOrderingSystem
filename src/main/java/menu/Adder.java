@@ -11,7 +11,11 @@ import java.util.Scanner;
  */
 public class Adder {
 
-    MenuCard menuCard = new MenuCard();
+    private MenuCard menuCard = new MenuCard();
+
+    public MenuCard getMenuCard() {
+        return menuCard;
+    }
 
     public void askToAdd() {
         System.out.println("Would you like to add something?\n1 - Cuisine\n2 - Drink\n3 - Course\n4 - Dessert");
